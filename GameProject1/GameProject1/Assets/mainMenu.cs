@@ -6,7 +6,7 @@ public class mainMenu : MonoBehaviour {
 	// Use this for initialization
 	void OnGUI () {
 
-		Rect box = new Rect (10, 10, 100, 90);
+		Rect box = new Rect (10, 10, Screen.width - 20 , Screen.height - 20);
 		GUI.Box (box, "Game Project 1");
 	
 		if (GUI.Button (new Rect (20, 40, 80, 20), "Start")) {
