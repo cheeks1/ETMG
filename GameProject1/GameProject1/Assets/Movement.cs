@@ -34,8 +34,8 @@ public class Movement : MonoBehaviour {
 
 			Vector3 PlayerPos = transform.position;
 			
-			Debug.Log("Mouse Down:  " + pos.x + ", " + pos.y + ":  PlayerPos: " + PlayerPos.x + ", " + PlayerPos.y + "::  "+ thisOne.bounds.max + ";" + 
-			          thisOne.bounds.min);
+			//Debug.Log("Mouse Down:  " + pos.x + ", " + pos.y + ":  PlayerPos: " + PlayerPos.x + ", " + PlayerPos.y + "::  "+ thisOne.bounds.max + ";" + 
+			          //thisOne.bounds.min);
 
 
 						
