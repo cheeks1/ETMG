@@ -5,10 +5,11 @@ public class Win : MonoBehaviour {
 
 	public void OnColissionEnter(Collision myCollision)
 	{
-
+		Debug.Log("Hit Something");
 		if (myCollision.gameObject.name == "Finish") 
 		{
-			Application.LoadLevel(2);
+			Debug.Log("Hit Sphere");
+			//Application.LoadLevel(2);
 		}
 
 		/*

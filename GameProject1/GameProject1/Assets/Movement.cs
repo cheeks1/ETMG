@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Movement : MonoBehaviour {
 
-	MeshCollider thisOne;
+	BoxCollider thisOne;
 	bool bDidTouch;
 
 	// Use this for initialization
@@ -17,9 +17,9 @@ public class Movement : MonoBehaviour {
 
 		//Touch touch;
 		Input.simulateMouseWithTouches = true;
+		thisOne = GetComponent<BoxCollider> ();
 
-
-		if (Input.GetMouseButtonDown(0))//GetButtonDown ("Fire1")) 
+		if (Input.GetMouseButtonDown(0) || bDidTouch)//GetButtonDown ("Fire1")) 
 		{
 			Vector3 pos = Vector3.zero;
 			
@@ -31,7 +31,7 @@ public class Movement : MonoBehaviour {
 			mousePos.z = transform.position.z;
 			
 			pos = mousePos;
-			
+
 			Vector3 PlayerPos = transform.position;
 			
 			Debug.Log("Mouse Down:  " + pos.x + ", " + pos.y + ":  PlayerPos: " + PlayerPos.x + ", " + PlayerPos.y + "::  "+ thisOne.bounds.max + ";" + 
@@ -39,26 +39,26 @@ public class Movement : MonoBehaviour {
 
 
 						
-			//if (thisOne.bounds.max.x > pos.x && thisOne.bounds.min.x < pos.x) 
-			//{
+			if (thisOne.bounds.max.x > pos.x && thisOne.bounds.min.x < pos.x) 
+			{
 								
 								
-				//if (thisOne.bounds.max.y > pos.y && thisOne.bounds.min.y < pos.y) 
-				//{
+				if (thisOne.bounds.max.y > pos.y && thisOne.bounds.min.y < pos.y) 
+				{
 										
 										
-					//if (bDidTouch) 
+					if (bDidTouch) 
 					{
 						
 				pos.z = 0.0f;
 				Vector3 newPos = Vector3.zero;
 				newPos = pos - PlayerPos;
 
-						gameObject.transform.Translate((newPos * Time.deltaTime));
+						gameObject.transform.Translate((newPos ));//* Time.deltaTime));
 						
-										
+				bDidTouch = true;				
 					} 
-				/**	else 
+				/**/	else 
 					{
 						bDidTouch = true;
 					}
