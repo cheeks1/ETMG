@@ -27,7 +27,7 @@ public class LoseMenu : MonoBehaviour {
 		if (GUI.Button (new Rect (40, Screen.height/2 - 100, Screen.width - 80, Screen.height/4 - 40), "Main Menu", style)) 
 		{
 			
-			Application.LoadLevel(0);
+			Application.LoadLevel(1);
 			
 		}
 	}

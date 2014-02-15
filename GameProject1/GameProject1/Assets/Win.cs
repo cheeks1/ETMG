@@ -9,13 +9,13 @@ public class Win : MonoBehaviour {
 		if (myCollision.gameObject.name == "Finish") 
 		{
 			Debug.Log("Hit Sphere");
-			Application.LoadLevel(2);
+			Application.LoadLevel(3);
 		}
 
 		/**/
 		if (myCollision.gameObject.tag == "Enemy") 
 		{
-			Application.LoadLevel(3);
+			Application.LoadLevel(4);
 		}/**/
 	}
 

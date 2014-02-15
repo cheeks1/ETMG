@@ -31,7 +31,7 @@ public class Speed : MonoBehaviour {
 		
 		dir *= Time.deltaTime;
 
-		if (dir != dir) 
+		if (dir != mDir) 
 		{
 			GameObject.Find ("Particle System").particleEmitter.enabled = true;
 
