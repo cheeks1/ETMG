@@ -3,20 +3,20 @@ using System.Collections;
 
 public class Win : MonoBehaviour {
 
-	public void OnColissionEnter(Collision myCollision)
+	void OnCollisionEnter(Collision myCollision)
 	{
-		Debug.Log("Hit Something");
+		//Debug.Log("Hit Something");
 		if (myCollision.gameObject.name == "Finish") 
 		{
 			Debug.Log("Hit Sphere");
-			//Application.LoadLevel(2);
+			Application.LoadLevel(2);
 		}
 
-		/*
-		if (myCollision.gameObject.name == Enemy) 
+		/**/
+		if (myCollision.gameObject.tag == "Enemy") 
 		{
 			Application.LoadLevel(3);
-		}*/
+		}/**/
 	}
 
 }
