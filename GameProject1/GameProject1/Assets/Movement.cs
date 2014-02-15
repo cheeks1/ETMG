@@ -3,92 +3,81 @@ using System.Collections;
 
 public class Movement : MonoBehaviour {
 
-	CircleCollider2D thisOne;
+	MeshCollider thisOne;
 	bool bDidTouch;
 
 	// Use this for initialization
 	void Start () {
 	
-		thisOne = this.GetComponent<CircleCollider2D> ();
 		bDidTouch = false;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-	
-		thisOne = this.GetComponent<CircleCollider2D> ();
-		Touch touch;
 
-		/**
-		if (Input.touchCount > 0) 
+		//Touch touch;
+		Input.simulateMouseWithTouches = true;
+
+
+		if (Input.GetMouseButtonDown(0))//GetButtonDown ("Fire1")) 
 		{
-			touch = Input.GetTouch (0);
-		}
-		else
-		{
-			bDidTouch = false;			
-			return;
+			Vector3 pos = Vector3.zero;
 			
-		}
+			Vector3 mousePos = Vector3.zero;
+			Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+			
+			if(Physics.Raycast(ray))
+				mousePos = ray.GetPoint(10);
+			mousePos.z = transform.position.z;
+			
+			pos = mousePos;
+			
+			Vector3 PlayerPos = transform.position;
+			
+			Debug.Log("Mouse Down:  " + pos.x + ", " + pos.y + ":  PlayerPos: " + PlayerPos.x + ", " + PlayerPos.y + "::  "+ thisOne.bounds.max + ";" + 
+			          thisOne.bounds.min);
 
-		//touch.position.x > 
-		if (thisOne.center.x + thisOne.radius > touch.position.x && thisOne.center.x - thisOne.radius < touch.position.x) 
-		{
-			if (thisOne.center.y + thisOne.radius > touch.position.y && thisOne.center.y - thisOne.radius < touch.position.y) 
-			{
-				if (bDidTouch) 
-				{
-					transform.position.Set(touch.position.x, touch.position.y, 0.0f);
-					this.GetComponent<CircleCollider2D>().center = touch.position;
+
+						
+			//if (thisOne.bounds.max.x > pos.x && thisOne.bounds.min.x < pos.x) 
+			//{
+								
+								
+				//if (thisOne.bounds.max.y > pos.y && thisOne.bounds.min.y < pos.y) 
+				//{
+										
+										
+					//if (bDidTouch) 
+					{
+						
+				pos.z = 0.0f;
+				Vector3 newPos = Vector3.zero;
+				newPos = pos - PlayerPos;
+
+						gameObject.transform.Translate((newPos * Time.deltaTime));
+						
+										
+					} 
+				/**	else 
+					{
+						bDidTouch = true;
+					}
+								
 				} 
 				else 
 				{
-					bDidTouch = true;
+					bDidTouch = false;
 				}
-			}
-			else
+						
+			} 
+			else 
 			{
-				bDidTouch = false;
-			}
+				bDidTouch = false;	
+			}/**/
 		} 
-		else 
-		{
-			bDidTouch = false;		
-		}
-		
+		else
+			bDidTouch = false;
 		/**/
 
-		bool IsDown = Input.GetMouseButtonDown (0);
-		Vector3 pos = Input.mousePosition;
-
-		if (IsDown == false) 
-		{
-			bDidTouch = false;
-			return;
-		}
-		//touch.position.x > 
-		if (thisOne.center.x + thisOne.radius > pos.x && thisOne.center.x - thisOne.radius < pos.x) 
-		{
-			if (thisOne.center.y + thisOne.radius > pos.y && thisOne.center.y - thisOne.radius < pos.y) 
-			{
-				if (bDidTouch) 
-				{
-					transform.position.Set(pos.x, pos.y, transform.position.z);
-					this.GetComponent<CircleCollider2D>().center = new Vector2(pos.x, pos.y);
-				} 
-				else 
-				{
-					bDidTouch = true;
-				}
-			}
-			else
-			{
-				bDidTouch = false;
-			}
-		} 
-		else 
-		{
-			bDidTouch = false;		
-		}/**/
 	}
 }
