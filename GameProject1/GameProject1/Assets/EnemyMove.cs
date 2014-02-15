@@ -4,6 +4,8 @@ using System.Collections;
 public class EnemyMove : MonoBehaviour {
 
 	private Vector3 mDir;
+
+
 	// Use this for initialization
 	void Start () {
 	
@@ -14,8 +16,8 @@ public class EnemyMove : MonoBehaviour {
 	void Update () {
 
 		Vector3 dir = Vector3.zero;
-		dir.x = -Input.acceleration.x;
-		dir.y = -Input.acceleration.y;
+		dir.x = Input.acceleration.x;
+		dir.y = Input.acceleration.y;
 
 		if (dir.sqrMagnitude > 1)
 			dir.Normalize();
