@@ -63,3 +63,8 @@ GameProject2/cocos2d-x-2.2.2/projects/MyGame/proj.tizen/
 GameProject2/cocos2d-x-2.2.2/projects/MyGame/proj.win32/
 GameProject2/cocos2d-x-2.2.2/projects/MyGame/proj.wp8/
 GameProject2/cocos2d-x-2.2.2/projects/MyGame/proj.winrt/
+
+Game2/MyGame/proj.android/
+Game2/MyGame/proj.linux/
+Game2/MyGame/proj.win32/
+CMakeLists.txt
