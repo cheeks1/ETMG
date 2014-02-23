@@ -72,6 +72,15 @@ bool MainMenuScene::init()
     // add the sprite as a child to this layer
     this->addChild(sprite, 0);
     
+    //Game Button
+    auto gameButton = MenuItemImage::create("gameButton.png", "gameButton.png", CC_CALLBACK_1(MainMenuScene::GameButtonCallback, this));
+    
+    gameButton->setPosition(100, 200);
+    
+    auto gameButtonMenu = Menu::create(gameButton, NULL);
+    gameButtonMenu->setPosition(Point::ZERO);
+    this->addChild(gameButtonMenu, 1);
+    
     return true;
 }
 
@@ -87,5 +96,5 @@ void MainMenuScene::menuCloseCallback(Object* pSender)
 
 void MainMenuScene::GameButtonCallback(Object* pSender)
 {
-   
+    Director::getInstance()->pushScene(GameScene::createScene());
 }
