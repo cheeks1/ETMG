@@ -75,7 +75,7 @@ bool MainMenuScene::init()
     //Game Button
     auto gameButton = MenuItemImage::create("gameButton.png", "gameButton.png", CC_CALLBACK_1(MainMenuScene::GameButtonCallback, this));
     
-    gameButton->setPosition(300, 400);
+    gameButton->setPosition(visibleSize.width/2, visibleSize.height/2 + 75);
     
     auto gameButtonMenu = Menu::create(gameButton, NULL);
     gameButtonMenu->setPosition(Point::ZERO);
@@ -84,7 +84,7 @@ bool MainMenuScene::init()
     //Exit Button
     auto exitButton = MenuItemImage::create("exitButton.png", "exitButton.png", CC_CALLBACK_1(MainMenuScene::ExitButtonCallback, this));
     
-    exitButton->setPosition(300, 200);
+    exitButton->setPosition(visibleSize.width/2, visibleSize.height/2 - 75);
     
     auto exitButtonMenu = Menu::create(exitButton, NULL);
     exitButtonMenu->setPosition(Point::ZERO);

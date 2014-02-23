@@ -6,6 +6,8 @@
 
 class GameScene : public cocos2d::Layer
 {
+private:
+    
 public:
     // there's no 'id' in cpp, so we recommend returning the class instance pointer
     static cocos2d::Scene* createScene();

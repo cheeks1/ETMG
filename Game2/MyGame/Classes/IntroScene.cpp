@@ -75,7 +75,7 @@ bool IntroScene::init()
     //Game Button
     auto gameButton = MenuItemImage::create("mainButton.png", "mainButton.png", CC_CALLBACK_1(IntroScene::MainMenuButtonCallback, this));
     
-    gameButton->setPosition(100, 200);
+    gameButton->setPosition(visibleSize.width/2, visibleSize.height/2 - 200);
     
     auto gameButtonMenu = Menu::create(gameButton, NULL);
     gameButtonMenu->setPosition(Point::ZERO);
