@@ -59,6 +59,7 @@
 		50E93B6F18B9B54300C76F75 /* exitButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 50E93B6C18B9B54300C76F75 /* exitButton.png */; };
 		50E93B7018B9B54300C76F75 /* gameButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 50E93B6D18B9B54300C76F75 /* gameButton.png */; };
 		50E93B7118B9B54300C76F75 /* mainButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 50E93B6E18B9B54300C76F75 /* mainButton.png */; };
+		50E93B7418B9BC9A00C76F75 /* IntroScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 50E93B7218B9BC9A00C76F75 /* IntroScene.cpp */; };
 		50EF629617ECD46A001EB2F8 /* Icon-40.png in Resources */ = {isa = PBXBuildFile; fileRef = 50EF629217ECD46A001EB2F8 /* Icon-40.png */; };
 		50EF629717ECD46A001EB2F8 /* Icon-58.png in Resources */ = {isa = PBXBuildFile; fileRef = 50EF629317ECD46A001EB2F8 /* Icon-58.png */; };
 		50EF629817ECD46A001EB2F8 /* Icon-80.png in Resources */ = {isa = PBXBuildFile; fileRef = 50EF629417ECD46A001EB2F8 /* Icon-80.png */; };
@@ -290,6 +291,8 @@
 		50E93B6C18B9B54300C76F75 /* exitButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = exitButton.png; path = ../MyArt/exitButton.png; sourceTree = "<group>"; };
 		50E93B6D18B9B54300C76F75 /* gameButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = gameButton.png; path = ../MyArt/gameButton.png; sourceTree = "<group>"; };
 		50E93B6E18B9B54300C76F75 /* mainButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = mainButton.png; path = ../MyArt/mainButton.png; sourceTree = "<group>"; };
+		50E93B7218B9BC9A00C76F75 /* IntroScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = IntroScene.cpp; path = ../Classes/IntroScene.cpp; sourceTree = "<group>"; };
+		50E93B7318B9BC9A00C76F75 /* IntroScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IntroScene.h; path = ../Classes/IntroScene.h; sourceTree = "<group>"; };
 		50EF629217ECD46A001EB2F8 /* Icon-40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-40.png"; sourceTree = "<group>"; };
 		50EF629317ECD46A001EB2F8 /* Icon-58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-58.png"; sourceTree = "<group>"; };
 		50EF629417ECD46A001EB2F8 /* Icon-80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-80.png"; sourceTree = "<group>"; };
@@ -378,6 +381,8 @@
 				50E93B6918B9B52B00C76F75 /* MainMenuScene.h */,
 				1AFAF8B316D35DE700DB1158 /* AppDelegate.cpp */,
 				1AFAF8B416D35DE700DB1158 /* AppDelegate.h */,
+				50E93B7218B9BC9A00C76F75 /* IntroScene.cpp */,
+				50E93B7318B9BC9A00C76F75 /* IntroScene.h */,
 			);
 			name = Classes;
 			path = ../classes;
@@ -744,6 +749,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				50E93B6A18B9B52B00C76F75 /* GameScene.cpp in Sources */,
+				50E93B7418B9BC9A00C76F75 /* IntroScene.cpp in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
 				1AFAF8B716D35DE700DB1158 /* AppDelegate.cpp in Sources */,
