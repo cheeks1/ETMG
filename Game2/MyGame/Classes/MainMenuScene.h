@@ -19,6 +19,9 @@ public:
     // game selector callback
     void GameButtonCallback(Object* pSender);
     
+    // exit selector callback
+    void ExitButtonCallback(Object* pSender);
+    
     // implement the "static create()" method manually
     CREATE_FUNC(MainMenuScene);
 };

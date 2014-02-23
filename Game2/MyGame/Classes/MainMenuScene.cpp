@@ -75,17 +75,35 @@ bool MainMenuScene::init()
     //Game Button
     auto gameButton = MenuItemImage::create("gameButton.png", "gameButton.png", CC_CALLBACK_1(MainMenuScene::GameButtonCallback, this));
     
-    gameButton->setPosition(100, 200);
+    gameButton->setPosition(300, 400);
     
     auto gameButtonMenu = Menu::create(gameButton, NULL);
     gameButtonMenu->setPosition(Point::ZERO);
     this->addChild(gameButtonMenu, 1);
+    
+    //Exit Button
+    auto exitButton = MenuItemImage::create("exitButton.png", "exitButton.png", CC_CALLBACK_1(MainMenuScene::ExitButtonCallback, this));
+    
+    exitButton->setPosition(300, 200);
+    
+    auto exitButtonMenu = Menu::create(exitButton, NULL);
+    exitButtonMenu->setPosition(Point::ZERO);
+    this->addChild(exitButtonMenu, 1);
     
     return true;
 }
 
 
 void MainMenuScene::menuCloseCallback(Object* pSender)
+{
+    Director::getInstance()->end();
+    
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
+    exit(0);
+#endif
+}
+
+void MainMenuScene::ExitButtonCallback(Object* pSender)
 {
     Director::getInstance()->end();
     
