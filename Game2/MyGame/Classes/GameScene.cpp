@@ -72,6 +72,15 @@ bool GameScene::init()
     // add the sprite as a child to this layer
     this->addChild(sprite, 0);
     
+    //Main menu Button
+    auto mainButton = MenuItemImage::create("mainButton.png", "mainButton.png", CC_CALLBACK_1(GameScene::MainMenuButtonCallback, this));
+    
+    mainButton->setPosition(110, visibleSize.height - 60);
+    
+    auto mainButtonMenu = Menu::create(mainButton, NULL);
+    mainButtonMenu->setPosition(Point::ZERO);
+    this->addChild(mainButtonMenu, 1);
+    
     return true;
 }
 
@@ -83,4 +92,9 @@ void GameScene::menuCloseCallback(Object* pSender)
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
     exit(0);
 #endif
+}
+
+void GameScene::MainMenuButtonCallback(Object* pSender)
+{
+    Director::getInstance()->popScene();
 }

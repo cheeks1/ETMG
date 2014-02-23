@@ -72,14 +72,14 @@ bool IntroScene::init()
     // add the sprite as a child to this layer
     this->addChild(sprite, 0);
     
-    //Game Button
-    auto gameButton = MenuItemImage::create("mainButton.png", "mainButton.png", CC_CALLBACK_1(IntroScene::MainMenuButtonCallback, this));
+    //Main menu Button
+    auto mainButton = MenuItemImage::create("mainButton.png", "mainButton.png", CC_CALLBACK_1(IntroScene::MainMenuButtonCallback, this));
     
-    gameButton->setPosition(visibleSize.width/2, visibleSize.height/2 - 200);
+    mainButton->setPosition(visibleSize.width/2, visibleSize.height/2 - 200);
     
-    auto gameButtonMenu = Menu::create(gameButton, NULL);
-    gameButtonMenu->setPosition(Point::ZERO);
-    this->addChild(gameButtonMenu, 1);
+    auto mainButtonMenu = Menu::create(mainButton, NULL);
+    mainButtonMenu->setPosition(Point::ZERO);
+    this->addChild(mainButtonMenu, 1);
     
     return true;
 }
@@ -96,5 +96,5 @@ void IntroScene::menuCloseCallback(Object* pSender)
 
 void IntroScene::MainMenuButtonCallback(Object* pSender)
 {
-    Director::getInstance()->pushScene(MainMenuScene::createScene());
+    Director::getInstance()->replaceScene(MainMenuScene::createScene());//pushScene(MainMenuScene::createScene());
 }

@@ -18,6 +18,9 @@ public:
     // a selector callback
     void menuCloseCallback(Object* pSender);
     
+    // main menu selector callback
+    void MainMenuButtonCallback(Object* pSender);
+    
     // implement the "static create()" method manually
     CREATE_FUNC(GameScene);
 };
