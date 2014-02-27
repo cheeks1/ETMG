@@ -30,6 +30,7 @@ bool GameScene::init()
     Size visibleSize = Director::getInstance()->getVisibleSize();
     Point origin = Director::getInstance()->getVisibleOrigin();
     
+    
     /////////////////////////////
     // 2. add a menu item with "X" image, which is clicked to quit the program
     //    you may modify it.
@@ -73,13 +74,17 @@ bool GameScene::init()
     this->addChild(sprite, 0);
     
     //Main menu Button
-    auto mainButton = MenuItemImage::create("mainButton.png", "mainButton.png", CC_CALLBACK_1(GameScene::MainMenuButtonCallback, this));
+    auto mainButton = MenuItemImage::create("mainMenuGameButton.png", "mainMenuGameButton.png", CC_CALLBACK_1(GameScene::MainMenuButtonCallback, this));
     
     mainButton->setPosition(110, visibleSize.height - 60);
     
     auto mainButtonMenu = Menu::create(mainButton, NULL);
     mainButtonMenu->setPosition(Point::ZERO);
     this->addChild(mainButtonMenu, 1);
+    
+    this->addChild(oPlayer.GetSprite());
+    
+    this->addChild(Enemies[0].GetSprite());
     
     return true;
 }

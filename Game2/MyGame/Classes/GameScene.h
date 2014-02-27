@@ -2,11 +2,16 @@
 #define __GAME_SCENE_H__
 
 #include "cocos2d.h"
-//#import <CoreMotion/CMMagnetometer.h>
+#include "PlayerObject.h"
+#include "EnemyObject.h"
+//#include "CMMagnetometer.h"
 
 class GameScene : public cocos2d::Layer
 {
 private:
+    PlayerObject oPlayer;
+    
+    EnemyObject Enemies[10];
     
 public:
     // there's no 'id' in cpp, so we recommend returning the class instance pointer
@@ -24,5 +29,6 @@ public:
     // implement the "static create()" method manually
     CREATE_FUNC(GameScene);
 };
+
 
 #endif // __GAME_SCENE_H__

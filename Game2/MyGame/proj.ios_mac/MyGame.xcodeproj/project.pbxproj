@@ -56,10 +56,15 @@
 		5087E78B17EB975400C73F5D /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5087E78A17EB975400C73F5D /* OpenGL.framework */; };
 		50E93B6A18B9B52B00C76F75 /* GameScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 50E93B6618B9B52B00C76F75 /* GameScene.cpp */; };
 		50E93B6B18B9B52B00C76F75 /* MainMenuScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 50E93B6818B9B52B00C76F75 /* MainMenuScene.cpp */; };
-		50E93B6F18B9B54300C76F75 /* exitButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 50E93B6C18B9B54300C76F75 /* exitButton.png */; };
-		50E93B7018B9B54300C76F75 /* gameButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 50E93B6D18B9B54300C76F75 /* gameButton.png */; };
-		50E93B7118B9B54300C76F75 /* mainButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 50E93B6E18B9B54300C76F75 /* mainButton.png */; };
 		50E93B7418B9BC9A00C76F75 /* IntroScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 50E93B7218B9BC9A00C76F75 /* IntroScene.cpp */; };
+		50E93B7718BAAC9A00C76F75 /* mainButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 50E93B7518BAAC9A00C76F75 /* mainButton.png */; };
+		50E93B7818BAAC9A00C76F75 /* mainMenuGameButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 50E93B7618BAAC9A00C76F75 /* mainMenuGameButton.png */; };
+		50E93B7A18BAACA200C76F75 /* exitButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 50E93B7918BAACA200C76F75 /* exitButton.png */; };
+		50E93B7C18BAACAA00C76F75 /* gameButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 50E93B7B18BAACAA00C76F75 /* gameButton.png */; };
+		50E93B7F18BD6C1800C76F75 /* PlayerObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 50E93B7D18BD6C1800C76F75 /* PlayerObject.cpp */; };
+		50E93B8218BECFDD00C76F75 /* EnemyObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 50E93B8018BECFDD00C76F75 /* EnemyObject.cpp */; };
+		50E93B8418BED38400C76F75 /* Player.png in Resources */ = {isa = PBXBuildFile; fileRef = 50E93B8318BED38400C76F75 /* Player.png */; };
+		50E93B8618BED38A00C76F75 /* Enemy.png in Resources */ = {isa = PBXBuildFile; fileRef = 50E93B8518BED38A00C76F75 /* Enemy.png */; };
 		50EF629617ECD46A001EB2F8 /* Icon-40.png in Resources */ = {isa = PBXBuildFile; fileRef = 50EF629217ECD46A001EB2F8 /* Icon-40.png */; };
 		50EF629717ECD46A001EB2F8 /* Icon-58.png in Resources */ = {isa = PBXBuildFile; fileRef = 50EF629317ECD46A001EB2F8 /* Icon-58.png */; };
 		50EF629817ECD46A001EB2F8 /* Icon-80.png in Resources */ = {isa = PBXBuildFile; fileRef = 50EF629417ECD46A001EB2F8 /* Icon-80.png */; };
@@ -288,11 +293,18 @@
 		50E93B6718B9B52B00C76F75 /* GameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameScene.h; path = ../Classes/GameScene.h; sourceTree = "<group>"; };
 		50E93B6818B9B52B00C76F75 /* MainMenuScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MainMenuScene.cpp; path = ../Classes/MainMenuScene.cpp; sourceTree = "<group>"; };
 		50E93B6918B9B52B00C76F75 /* MainMenuScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainMenuScene.h; path = ../Classes/MainMenuScene.h; sourceTree = "<group>"; };
-		50E93B6C18B9B54300C76F75 /* exitButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = exitButton.png; path = ../MyArt/exitButton.png; sourceTree = "<group>"; };
-		50E93B6D18B9B54300C76F75 /* gameButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = gameButton.png; path = ../MyArt/gameButton.png; sourceTree = "<group>"; };
-		50E93B6E18B9B54300C76F75 /* mainButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = mainButton.png; path = ../MyArt/mainButton.png; sourceTree = "<group>"; };
 		50E93B7218B9BC9A00C76F75 /* IntroScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = IntroScene.cpp; path = ../Classes/IntroScene.cpp; sourceTree = "<group>"; };
 		50E93B7318B9BC9A00C76F75 /* IntroScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IntroScene.h; path = ../Classes/IntroScene.h; sourceTree = "<group>"; };
+		50E93B7518BAAC9A00C76F75 /* mainButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mainButton.png; sourceTree = "<group>"; };
+		50E93B7618BAAC9A00C76F75 /* mainMenuGameButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mainMenuGameButton.png; sourceTree = "<group>"; };
+		50E93B7918BAACA200C76F75 /* exitButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = exitButton.png; sourceTree = "<group>"; };
+		50E93B7B18BAACAA00C76F75 /* gameButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gameButton.png; sourceTree = "<group>"; };
+		50E93B7D18BD6C1800C76F75 /* PlayerObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = PlayerObject.cpp; path = ../Classes/PlayerObject.cpp; sourceTree = "<group>"; };
+		50E93B7E18BD6C1800C76F75 /* PlayerObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PlayerObject.h; path = ../Classes/PlayerObject.h; sourceTree = "<group>"; };
+		50E93B8018BECFDD00C76F75 /* EnemyObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = EnemyObject.cpp; path = ../Classes/EnemyObject.cpp; sourceTree = "<group>"; };
+		50E93B8118BECFDD00C76F75 /* EnemyObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EnemyObject.h; path = ../Classes/EnemyObject.h; sourceTree = "<group>"; };
+		50E93B8318BED38400C76F75 /* Player.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Player.png; sourceTree = "<group>"; };
+		50E93B8518BED38A00C76F75 /* Enemy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Enemy.png; sourceTree = "<group>"; };
 		50EF629217ECD46A001EB2F8 /* Icon-40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-40.png"; sourceTree = "<group>"; };
 		50EF629317ECD46A001EB2F8 /* Icon-58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-58.png"; sourceTree = "<group>"; };
 		50EF629417ECD46A001EB2F8 /* Icon-80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-80.png"; sourceTree = "<group>"; };
@@ -383,6 +395,10 @@
 				1AFAF8B416D35DE700DB1158 /* AppDelegate.h */,
 				50E93B7218B9BC9A00C76F75 /* IntroScene.cpp */,
 				50E93B7318B9BC9A00C76F75 /* IntroScene.h */,
+				50E93B7D18BD6C1800C76F75 /* PlayerObject.cpp */,
+				50E93B7E18BD6C1800C76F75 /* PlayerObject.h */,
+				50E93B8018BECFDD00C76F75 /* EnemyObject.cpp */,
+				50E93B8118BECFDD00C76F75 /* EnemyObject.h */,
 			);
 			name = Classes;
 			path = ../classes;
@@ -421,9 +437,6 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
-				50E93B6C18B9B54300C76F75 /* exitButton.png */,
-				50E93B6D18B9B54300C76F75 /* gameButton.png */,
-				50E93B6E18B9B54300C76F75 /* mainButton.png */,
 				1AC6FAE5180E9839004C840B /* cocos2d_libs.xcodeproj */,
 				15AA9C4015B7EC450033D6C2 /* Classes */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
@@ -505,6 +518,12 @@
 		78C7DDAA14EBA5050085D0C2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				50E93B8518BED38A00C76F75 /* Enemy.png */,
+				50E93B8318BED38400C76F75 /* Player.png */,
+				50E93B7B18BAACAA00C76F75 /* gameButton.png */,
+				50E93B7918BAACA200C76F75 /* exitButton.png */,
+				50E93B7518BAAC9A00C76F75 /* mainButton.png */,
+				50E93B7618BAAC9A00C76F75 /* mainMenuGameButton.png */,
 				1AFAF8B916D35E4900DB1158 /* CloseNormal.png */,
 				1AFAF8BA16D35E4900DB1158 /* CloseSelected.png */,
 				1AFAF8BB16D35E4900DB1158 /* HelloWorld.png */,
@@ -706,14 +725,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				5087E78117EB970100C73F5D /* Icon-120.png in Resources */,
+				50E93B7A18BAACA200C76F75 /* exitButton.png in Resources */,
+				50E93B8418BED38400C76F75 /* Player.png in Resources */,
 				5087E78617EB970100C73F5D /* Icon-76.png in Resources */,
 				5087E77F17EB970100C73F5D /* Default@2x.png in Resources */,
-				50E93B6F18B9B54300C76F75 /* exitButton.png in Resources */,
 				50EF629917ECD46A001EB2F8 /* Icon-100.png in Resources */,
 				1AFAF8BC16D35E4900DB1158 /* CloseNormal.png in Resources */,
 				5087E78317EB970100C73F5D /* Icon-152.png in Resources */,
+				50E93B7818BAAC9A00C76F75 /* mainMenuGameButton.png in Resources */,
+				50E93B7C18BAACAA00C76F75 /* gameButton.png in Resources */,
 				5087E77D17EB970100C73F5D /* Default-568h@2x.png in Resources */,
-				50E93B7018B9B54300C76F75 /* gameButton.png in Resources */,
 				5087E78517EB970100C73F5D /* Icon-72.png in Resources */,
 				1AFAF8BD16D35E4900DB1158 /* CloseSelected.png in Resources */,
 				50EF62A317ECD613001EB2F8 /* Icon-50.png in Resources */,
@@ -722,10 +743,11 @@
 				50EF62A217ECD613001EB2F8 /* Icon-29.png in Resources */,
 				50EF629617ECD46A001EB2F8 /* Icon-40.png in Resources */,
 				5087E78217EB970100C73F5D /* Icon-144.png in Resources */,
+				50E93B8618BED38A00C76F75 /* Enemy.png in Resources */,
 				50EF629817ECD46A001EB2F8 /* Icon-80.png in Resources */,
 				5087E78417EB970100C73F5D /* Icon-57.png in Resources */,
 				5087E77E17EB970100C73F5D /* Default.png in Resources */,
-				50E93B7118B9B54300C76F75 /* mainButton.png in Resources */,
+				50E93B7718BAAC9A00C76F75 /* mainButton.png in Resources */,
 				50EF629717ECD46A001EB2F8 /* Icon-58.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -749,10 +771,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				50E93B6A18B9B52B00C76F75 /* GameScene.cpp in Sources */,
+				50E93B8218BECFDD00C76F75 /* EnemyObject.cpp in Sources */,
 				50E93B7418B9BC9A00C76F75 /* IntroScene.cpp in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
 				1AFAF8B716D35DE700DB1158 /* AppDelegate.cpp in Sources */,
+				50E93B7F18BD6C1800C76F75 /* PlayerObject.cpp in Sources */,
 				50E93B6B18B9B52B00C76F75 /* MainMenuScene.cpp in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
 			);
