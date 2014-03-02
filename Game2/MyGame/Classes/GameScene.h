@@ -4,7 +4,10 @@
 #include "cocos2d.h"
 #include "PlayerObject.h"
 #include "EnemyObject.h"
+#include "Box2D/Box2D.h"
 //#include "CMMagnetometer.h"
+
+using namespace cocos2d;
 
 class GameScene : public cocos2d::Layer
 {
@@ -37,7 +40,7 @@ public:
     bool GetTouching();
     
     void SetTouching(bool is);
-    
+
 };
 
 

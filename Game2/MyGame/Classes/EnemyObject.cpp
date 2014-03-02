@@ -53,6 +53,10 @@ cocos2d::Sprite* EnemyObject::GetSprite()
 void EnemyObject::SetPos(cocos2d::Point pos)
 {
     vPos = pos;
+    
+    EnemySprite->setPosition(vPos);
+    
+    bounds.setRect(vPos.x - 32.0f, vPos.y - 32.0f, vPos.x + 32.0f, vPos.y + 32.0f);
 }
 
 void EnemyObject::Update()

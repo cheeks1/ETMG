@@ -15,7 +15,6 @@ PlayerObject::PlayerObject()
     PlayerSprite = cocos2d::Sprite::create("Player.png");
     PlayerSprite->setPosition(vPos);
     
-    
     bounds.setRect(vPos.x - 32.0f, vPos.y - 32.0f, vPos.x + 32.0f, vPos.y + 32.0f);
     
     nID = 0;

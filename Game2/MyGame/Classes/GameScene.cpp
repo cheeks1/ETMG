@@ -3,6 +3,9 @@
 
 USING_NS_CC;
 
+b2World* world;
+b2Vec2 gravity;
+
 Scene* GameScene::createScene()
 {
     // 'scene' is an autorelease object
@@ -92,8 +95,6 @@ bool GameScene::init()
     
     this->addChild(oPlayer.GetSprite());
     
-    this->addChild(Enemies[0].GetSprite());
-    
     auto listener1 = EventListenerTouchOneByOne::create();
     listener1->setSwallowTouches(true);
     
@@ -107,8 +108,7 @@ bool GameScene::init()
         //Check the click area
         if (target->GetPlayer()->GetBounds().containsPoint(locationInNode))
         {
-            log("sprite began... x = %f, y = %f", locationInNode.x, locationInNode.y);
-            target->GetPlayer()->SetPos(locationInNode);
+            //target->GetPlayer()->SetPos(locationInNode);
             target->SetTouching(true);
             return true;
         }
@@ -123,12 +123,52 @@ bool GameScene::init()
         
         if(target->GetTouching())
         {
-            //Move the position of current button sprite
-            target->GetPlayer()->SetPos(locationInNode);// + touch->getDelta());
+            //Move the position of player
+            target->GetPlayer()->SetPos(locationInNode);
         }
     };
     
     _eventDispatcher->addEventListenerWithSceneGraphPriority(listener1, this);
+    
+    //Setting up box2d
+    gravity.Set(0.0f, 0.0f);
+    world = new b2World(gravity);
+    
+    
+    //Placing Enemies
+    for(int i = 0; i < 10; ++i)
+    {
+        //random y
+        int minY = 16;
+        int maxY = visibleSize.height - 16;
+        int rangeY = maxY - minY;
+        int randomY = (arc4random() % rangeY) + minY;
+        //random x
+        int minX = 100;
+        int maxX = visibleSize.width - 50;
+        int rangeX = maxX - minX;
+        int randomX = (arc4random() % rangeX) + minX;
+    
+        Enemies[i].SetPos(Point(randomX, randomY));
+        this->addChild(Enemies[i].GetSprite());
+        
+        b2BodyDef enemyBodyDef;
+        enemyBodyDef.type = b2_staticBody;
+        enemyBodyDef.position = b2Vec2(Enemies[i].GetPos().x, Enemies[i].GetPos().y);
+        enemyBodyDef.userData = Enemies[i].GetSprite();
+        
+        auto enemyBody = world->CreateBody(&enemyBodyDef);
+        
+        b2CircleShape circle;
+        circle.m_radius = 32;
+        
+        b2FixtureDef enemyFixDef;
+        enemyFixDef.shape = &circle;
+        enemyFixDef.density = 1.0f;
+        
+        enemyBody->CreateFixture(&enemyFixDef);
+        
+    }
     
     return true;
 }
