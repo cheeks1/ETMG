@@ -1,4 +1,5 @@
 #include "MainMenuScene.h"
+#include "SimpleAudioEngine.h"
 
 USING_NS_CC;
 
@@ -29,6 +30,8 @@ bool MainMenuScene::init()
     
     Size visibleSize = Director::getInstance()->getVisibleSize();
     Point origin = Director::getInstance()->getVisibleOrigin();
+    
+    CocosDenshion::SimpleAudioEngine::getInstance()->playBackgroundMusic("JazzTip.wav");    
     
     /////////////////////////////
     // 2. add a menu item with "X" image, which is clicked to quit the program
@@ -114,5 +117,6 @@ void MainMenuScene::ExitButtonCallback(Object* pSender)
 
 void MainMenuScene::GameButtonCallback(Object* pSender)
 {
+    CocosDenshion::SimpleAudioEngine::getInstance()->stopBackgroundMusic();
     Director::getInstance()->pushScene(GameScene::createScene());
 }

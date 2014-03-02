@@ -1,6 +1,7 @@
 #include "GameScene.h"
 #include "WinScene.h"
 #include "LoseScene.h"
+#include "SimpleAudioEngine.h"
 
 USING_NS_CC;
 
@@ -161,7 +162,9 @@ bool GameScene::init()
                 return;
             }
             
-            target->GetPlayer()->SetPos(locationInNode);        }
+            target->GetPlayer()->SetPos(locationInNode);
+        }
+        
     };
     
     _eventDispatcher->addEventListenerWithSceneGraphPriority(listener1, this);
@@ -223,6 +226,8 @@ bool GameScene::init()
         enemyBody->CreateFixture(&enemyFixDef);
     }
     
+    CocosDenshion::SimpleAudioEngine::getInstance()->playBackgroundMusic("WahWah.wav");
+    
     return true;
 }
 
@@ -267,14 +272,18 @@ EnemyObject* GameScene::GetEnemies()
 
 void GameScene::GameCondition(bool bCondition)
 {
+    CocosDenshion::SimpleAudioEngine::getInstance()->stopBackgroundMusic();
+    
     if(bCondition)
     {
         //win
         Director::getInstance()->replaceScene(WinScene::createScene());
+        CocosDenshion::SimpleAudioEngine::getInstance()->playEffect("Win.wav");
     }
     else
     {
         //lose
         Director::getInstance()->replaceScene(LoseScene::createScene());
+        CocosDenshion::SimpleAudioEngine::getInstance()->playEffect("Lose.wav");
     }
 }

@@ -1,4 +1,5 @@
 #include "IntroScene.h"
+#include "SimpleAudioEngine.h"
 
 USING_NS_CC;
 
@@ -29,6 +30,8 @@ bool IntroScene::init()
     
     Size visibleSize = Director::getInstance()->getVisibleSize();
     Point origin = Director::getInstance()->getVisibleOrigin();
+    
+    CocosDenshion::SimpleAudioEngine::getInstance()->playBackgroundMusic("FreedomDance.wav");    
     
     /////////////////////////////
     // 2. add a menu item with "X" image, which is clicked to quit the program
@@ -96,5 +99,6 @@ void IntroScene::menuCloseCallback(Object* pSender)
 
 void IntroScene::MainMenuButtonCallback(Object* pSender)
 {
+    CocosDenshion::SimpleAudioEngine::getInstance()->stopBackgroundMusic();
     Director::getInstance()->replaceScene(MainMenuScene::createScene());//pushScene(MainMenuScene::createScene());
 }

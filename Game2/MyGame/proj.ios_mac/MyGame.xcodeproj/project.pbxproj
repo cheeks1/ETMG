@@ -27,6 +27,13 @@
 		500ABE3F18C2C029003CE2C0 /* Finish.png in Resources */ = {isa = PBXBuildFile; fileRef = 500ABE3E18C2C029003CE2C0 /* Finish.png */; };
 		500ABE4818C31525003CE2C0 /* WinScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 500ABE4618C31525003CE2C0 /* WinScene.cpp */; };
 		500ABE4B18C31628003CE2C0 /* LoseScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 500ABE4918C31628003CE2C0 /* LoseScene.cpp */; };
+		500ABE4D18C318ED003CE2C0 /* Win.png in Resources */ = {isa = PBXBuildFile; fileRef = 500ABE4C18C318ED003CE2C0 /* Win.png */; };
+		500ABE4F18C318F4003CE2C0 /* Lose.png in Resources */ = {isa = PBXBuildFile; fileRef = 500ABE4E18C318F4003CE2C0 /* Lose.png */; };
+		500ABE5118C31A08003CE2C0 /* WahWah.wav in Resources */ = {isa = PBXBuildFile; fileRef = 500ABE5018C31A08003CE2C0 /* WahWah.wav */; };
+		500ABE5318C31BE8003CE2C0 /* Lose.wav in Resources */ = {isa = PBXBuildFile; fileRef = 500ABE5218C31BE8003CE2C0 /* Lose.wav */; };
+		500ABE5518C31BEF003CE2C0 /* Win.wav in Resources */ = {isa = PBXBuildFile; fileRef = 500ABE5418C31BEF003CE2C0 /* Win.wav */; };
+		500ABE5718C31D1E003CE2C0 /* FreedomDance.wav in Resources */ = {isa = PBXBuildFile; fileRef = 500ABE5618C31D1E003CE2C0 /* FreedomDance.wav */; };
+		500ABE5918C31D23003CE2C0 /* JazzTip.wav in Resources */ = {isa = PBXBuildFile; fileRef = 500ABE5818C31D23003CE2C0 /* JazzTip.wav */; };
 		503AE0F817EB97AB00D1A890 /* Icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 503AE0F617EB97AB00D1A890 /* Icon.icns */; };
 		503AE10017EB989F00D1A890 /* AppController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 503AE0FB17EB989F00D1A890 /* AppController.mm */; };
 		503AE10117EB989F00D1A890 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 503AE0FC17EB989F00D1A890 /* main.m */; };
@@ -271,6 +278,13 @@
 		500ABE4718C31525003CE2C0 /* WinScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WinScene.h; path = ../Classes/WinScene.h; sourceTree = "<group>"; };
 		500ABE4918C31628003CE2C0 /* LoseScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LoseScene.cpp; path = ../Classes/LoseScene.cpp; sourceTree = "<group>"; };
 		500ABE4A18C31628003CE2C0 /* LoseScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoseScene.h; path = ../Classes/LoseScene.h; sourceTree = "<group>"; };
+		500ABE4C18C318ED003CE2C0 /* Win.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Win.png; sourceTree = "<group>"; };
+		500ABE4E18C318F4003CE2C0 /* Lose.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Lose.png; sourceTree = "<group>"; };
+		500ABE5018C31A08003CE2C0 /* WahWah.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = WahWah.wav; sourceTree = "<group>"; };
+		500ABE5218C31BE8003CE2C0 /* Lose.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Lose.wav; sourceTree = "<group>"; };
+		500ABE5418C31BEF003CE2C0 /* Win.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Win.wav; sourceTree = "<group>"; };
+		500ABE5618C31D1E003CE2C0 /* FreedomDance.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = FreedomDance.wav; sourceTree = "<group>"; };
+		500ABE5818C31D23003CE2C0 /* JazzTip.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = JazzTip.wav; sourceTree = "<group>"; };
 		503AE0F617EB97AB00D1A890 /* Icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Icon.icns; sourceTree = "<group>"; };
 		503AE0F717EB97AB00D1A890 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		503AE0FA17EB989F00D1A890 /* AppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppController.h; path = ios/AppController.h; sourceTree = SOURCE_ROOT; };
@@ -530,6 +544,13 @@
 		78C7DDAA14EBA5050085D0C2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				500ABE5818C31D23003CE2C0 /* JazzTip.wav */,
+				500ABE5618C31D1E003CE2C0 /* FreedomDance.wav */,
+				500ABE5418C31BEF003CE2C0 /* Win.wav */,
+				500ABE5218C31BE8003CE2C0 /* Lose.wav */,
+				500ABE5018C31A08003CE2C0 /* WahWah.wav */,
+				500ABE4E18C318F4003CE2C0 /* Lose.png */,
+				500ABE4C18C318ED003CE2C0 /* Win.png */,
 				500ABE3E18C2C029003CE2C0 /* Finish.png */,
 				50E93B8518BED38A00C76F75 /* Enemy.png */,
 				50E93B8318BED38400C76F75 /* Player.png */,
@@ -738,15 +759,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				5087E78117EB970100C73F5D /* Icon-120.png in Resources */,
+				500ABE5318C31BE8003CE2C0 /* Lose.wav in Resources */,
 				50E93B7A18BAACA200C76F75 /* exitButton.png in Resources */,
 				50E93B8418BED38400C76F75 /* Player.png in Resources */,
+				500ABE4D18C318ED003CE2C0 /* Win.png in Resources */,
 				5087E78617EB970100C73F5D /* Icon-76.png in Resources */,
 				5087E77F17EB970100C73F5D /* Default@2x.png in Resources */,
 				50EF629917ECD46A001EB2F8 /* Icon-100.png in Resources */,
 				1AFAF8BC16D35E4900DB1158 /* CloseNormal.png in Resources */,
+				500ABE5918C31D23003CE2C0 /* JazzTip.wav in Resources */,
+				500ABE5718C31D1E003CE2C0 /* FreedomDance.wav in Resources */,
 				5087E78317EB970100C73F5D /* Icon-152.png in Resources */,
 				50E93B7818BAAC9A00C76F75 /* mainMenuGameButton.png in Resources */,
 				50E93B7C18BAACAA00C76F75 /* gameButton.png in Resources */,
+				500ABE5118C31A08003CE2C0 /* WahWah.wav in Resources */,
 				5087E77D17EB970100C73F5D /* Default-568h@2x.png in Resources */,
 				5087E78517EB970100C73F5D /* Icon-72.png in Resources */,
 				1AFAF8BD16D35E4900DB1158 /* CloseSelected.png in Resources */,
@@ -757,11 +783,13 @@
 				50EF629617ECD46A001EB2F8 /* Icon-40.png in Resources */,
 				5087E78217EB970100C73F5D /* Icon-144.png in Resources */,
 				50E93B8618BED38A00C76F75 /* Enemy.png in Resources */,
+				500ABE5518C31BEF003CE2C0 /* Win.wav in Resources */,
 				500ABE3F18C2C029003CE2C0 /* Finish.png in Resources */,
 				50EF629817ECD46A001EB2F8 /* Icon-80.png in Resources */,
 				5087E78417EB970100C73F5D /* Icon-57.png in Resources */,
 				5087E77E17EB970100C73F5D /* Default.png in Resources */,
 				50E93B7718BAAC9A00C76F75 /* mainButton.png in Resources */,
+				500ABE4F18C318F4003CE2C0 /* Lose.png in Resources */,
 				50EF629717ECD46A001EB2F8 /* Icon-58.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
