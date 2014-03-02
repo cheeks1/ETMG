@@ -1,7 +1,6 @@
 #include "MainMenuScene.h"
 #include "SimpleAudioEngine.h"
 
-USING_NS_CC;
 
 Scene* MainMenuScene::createScene()
 {
@@ -32,7 +31,7 @@ bool MainMenuScene::init()
     Point origin = Director::getInstance()->getVisibleOrigin();
     
     CocosDenshion::SimpleAudioEngine::getInstance()->playBackgroundMusic("JazzTip.wav");    
-    
+
     /////////////////////////////
     // 2. add a menu item with "X" image, which is clicked to quit the program
     //    you may modify it.
@@ -56,8 +55,9 @@ bool MainMenuScene::init()
     
     // add a label shows "Hello World"
     // create and initialize a label
+    std::string myString = ("Main Menu");// %f", UIScreen::mainScreen.brightness);
     
-    auto label = LabelTTF::create("Main Menu", "Arial", 24);
+    auto label = LabelTTF::create(myString, "Arial", 24);
     
     // position the label on the center of the screen
     label->setPosition(Point(origin.x + visibleSize.width/2,
