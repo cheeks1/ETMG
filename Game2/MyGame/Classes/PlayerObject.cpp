@@ -16,7 +16,7 @@ PlayerObject::PlayerObject()
     PlayerSprite->setPosition(vPos);
     
     
-    bounds.setRect(vPos.x - 16.0f, vPos.y - 16.0f, vPos.x + 16.0f, vPos.y + 16.0f);
+    bounds.setRect(vPos.x - 32.0f, vPos.y - 32.0f, vPos.x + 32.0f, vPos.y + 32.0f);
     
     nID = 0;
 }

@@ -73,13 +73,13 @@ bool GameScene::init()
     this->addChild(label, 1);
     
     // add "HelloWorld" splash screen"
-    //auto sprite = Sprite::create("HelloWorld.png");
+    auto sprite = Sprite::create("Finish.png");
     
     // position the sprite on the center of the screen
-    //sprite->setPosition(Point(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y));
+    sprite->setPosition(Point(visibleSize.width - 32, visibleSize.height/2 + origin.y));
     
     // add the sprite as a child to this layer
-    //this->addChild(sprite, 0);
+    this->addChild(sprite, 0);
     
     //Main menu Button
     auto mainButton = MenuItemImage::create("mainMenuGameButton.png", "mainMenuGameButton.png", CC_CALLBACK_1(GameScene::MainMenuButtonCallback, this));
@@ -103,8 +103,6 @@ bool GameScene::init()
         
         //Get the position of the current point relative to the button
         Point locationInNode = target->convertToNodeSpace(touch->getLocation());
-        Size s = target->getContentSize();
-        Rect rect = Rect(0, 0, s.width, s.height);
         
         //Check the click area
         if (target->GetPlayer()->GetBounds().containsPoint(locationInNode))
@@ -122,6 +120,7 @@ bool GameScene::init()
     listener1->onTouchMoved = [](Touch* touch, Event* event){
         auto target = static_cast<GameScene*>(event->getCurrentTarget());
         Point locationInNode = target->convertToNodeSpace(touch->getLocation());
+        
         if(target->GetTouching())
         {
             //Move the position of current button sprite
