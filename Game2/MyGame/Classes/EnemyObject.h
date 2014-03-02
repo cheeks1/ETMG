@@ -10,6 +10,7 @@
 #define __MyGame__EnemyObject__
 
 #include "cocos2d.h"
+#include "Box2D/Box2D.h"
 
 class EnemyObject{
 private:

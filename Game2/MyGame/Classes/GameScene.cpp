@@ -1,10 +1,8 @@
 #include "GameScene.h"
-
+#include "WinScene.h"
+#include "LoseScene.h"
 
 USING_NS_CC;
-
-b2World* world;
-b2Vec2 gravity;
 
 Scene* GameScene::createScene()
 {
@@ -93,6 +91,7 @@ bool GameScene::init()
     mainButtonMenu->setPosition(Point::ZERO);
     this->addChild(mainButtonMenu, 1);
     
+    oPlayer.SetPos(Point(50, visibleSize.height/2));
     this->addChild(oPlayer.GetSprite());
     
     auto listener1 = EventListenerTouchOneByOne::create();
@@ -124,8 +123,45 @@ bool GameScene::init()
         if(target->GetTouching())
         {
             //Move the position of player
-            target->GetPlayer()->SetPos(locationInNode);
-        }
+            
+            //Check Collision with enemy
+            for(int i = 0;i < NUM_ENEMY; ++i)
+            {
+                Point pPoint = target->GetEnemies()[i].GetPos();
+                
+                if(locationInNode.x + 30 > pPoint.x - 30 && locationInNode.x + 30 < pPoint.x + 30)
+                {
+                    if(locationInNode.y - 30 > pPoint.y - 30 && locationInNode.y - 30 < pPoint.y + 30)
+                    {
+                        target->GameCondition(false);
+                    }
+                    else if(locationInNode.y + 30 > pPoint.y - 30 && locationInNode.y + 30 < pPoint.y + 30)
+                    {
+                        target->GameCondition(false);
+                        
+                    }
+                }
+                else if(locationInNode.x - 30 > pPoint.x - 30 && locationInNode.x - 30 < pPoint.x + 30)
+                {
+                    if(locationInNode.y - 30 > pPoint.y - 30 && locationInNode.y - 30 < pPoint.y + 30)
+                    {
+                        target->GameCondition(false);
+                    }
+                    else if(locationInNode.y + 30 > pPoint.y - 30 && locationInNode.y + 30 < pPoint.y + 30)
+                    {
+                        target->GameCondition(false);
+                        
+                    }
+                }
+            }
+            
+            if(locationInNode.x > Director::getInstance()->getVisibleSize().width - 75)
+            {
+                target->GameCondition(true);
+                return;
+            }
+            
+            target->GetPlayer()->SetPos(locationInNode);        }
     };
     
     _eventDispatcher->addEventListenerWithSceneGraphPriority(listener1, this);
@@ -134,20 +170,38 @@ bool GameScene::init()
     gravity.Set(0.0f, 0.0f);
     world = new b2World(gravity);
     
+    b2ContactFilter myContactFilter;
+    world->SetContactFilter(&myContactFilter);
+    
+    b2BodyDef playerBodyDef;
+    playerBodyDef.type = b2_dynamicBody;
+    playerBodyDef.position = b2Vec2(oPlayer.GetPos().x, oPlayer.GetPos().y);
+    playerBodyDef.userData = oPlayer.GetSprite();
+    
+    playerBody = world->CreateBody(&playerBodyDef);
+    
+    b2CircleShape circle;
+    circle.m_radius = 30;
+    
+    b2FixtureDef playerFixDef;
+    playerFixDef.shape = &circle;
+    playerFixDef.density = 1.0f;
+    
+    playerBody->CreateFixture(&playerFixDef);
     
     //Placing Enemies
-    for(int i = 0; i < 10; ++i)
+    for(int i = 0; i < NUM_ENEMY; ++i)
     {
         //random y
-        int minY = 16;
-        int maxY = visibleSize.height - 16;
+        int minY = 32;
+        int maxY = visibleSize.height - 32;
         int rangeY = maxY - minY;
         int randomY = (arc4random() % rangeY) + minY;
         //random x
-        int minX = 100;
-        int maxX = visibleSize.width - 50;
+        int minX = 110;
+        int maxX = visibleSize.width - 190;
         int rangeX = maxX - minX;
-        int randomX = (arc4random() % rangeX) + minX;
+        int randomX = ( arc4random() % rangeX) + minX;
     
         Enemies[i].SetPos(Point(randomX, randomY));
         this->addChild(Enemies[i].GetSprite());
@@ -160,14 +214,13 @@ bool GameScene::init()
         auto enemyBody = world->CreateBody(&enemyBodyDef);
         
         b2CircleShape circle;
-        circle.m_radius = 32;
+        circle.m_radius = 30;
         
         b2FixtureDef enemyFixDef;
         enemyFixDef.shape = &circle;
         enemyFixDef.density = 1.0f;
         
         enemyBody->CreateFixture(&enemyFixDef);
-        
     }
     
     return true;
@@ -202,3 +255,26 @@ void GameScene::MainMenuButtonCallback(Object* pSender)
     Director::getInstance()->popScene();
 }
 
+void GameScene::CheckCollision()
+{
+
+}
+
+EnemyObject* GameScene::GetEnemies()
+{
+    return Enemies;
+}
+
+void GameScene::GameCondition(bool bCondition)
+{
+    if(bCondition)
+    {
+        //win
+        Director::getInstance()->replaceScene(WinScene::createScene());
+    }
+    else
+    {
+        //lose
+        Director::getInstance()->replaceScene(LoseScene::createScene());
+    }
+}

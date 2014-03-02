@@ -9,16 +9,25 @@
 
 using namespace cocos2d;
 
+#define NUM_ENEMY 10
+
 class GameScene : public cocos2d::Layer
 {
 private:
     PlayerObject oPlayer;
     
-    EnemyObject Enemies[10];
+    b2Body* playerBody;
+    
+    EnemyObject Enemies[NUM_ENEMY];
     
     bool bIsOver;
     
     bool bIsTouching;
+    
+    b2World* world;
+    
+    b2Vec2 gravity;
+
     
 public:
     // there's no 'id' in cpp, so we recommend returning the class instance pointer
@@ -37,10 +46,17 @@ public:
     CREATE_FUNC(GameScene);
     
     PlayerObject* GetPlayer();
+    
     bool GetTouching();
+    
+    EnemyObject* GetEnemies();
     
     void SetTouching(bool is);
 
+    void CheckCollision();
+    
+    void GameCondition(bool bCondition);
+    
 };
 
 

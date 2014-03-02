@@ -25,6 +25,8 @@
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
 		500ABE3F18C2C029003CE2C0 /* Finish.png in Resources */ = {isa = PBXBuildFile; fileRef = 500ABE3E18C2C029003CE2C0 /* Finish.png */; };
+		500ABE4818C31525003CE2C0 /* WinScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 500ABE4618C31525003CE2C0 /* WinScene.cpp */; };
+		500ABE4B18C31628003CE2C0 /* LoseScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 500ABE4918C31628003CE2C0 /* LoseScene.cpp */; };
 		503AE0F817EB97AB00D1A890 /* Icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 503AE0F617EB97AB00D1A890 /* Icon.icns */; };
 		503AE10017EB989F00D1A890 /* AppController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 503AE0FB17EB989F00D1A890 /* AppController.mm */; };
 		503AE10117EB989F00D1A890 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 503AE0FC17EB989F00D1A890 /* main.m */; };
@@ -265,6 +267,10 @@
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		288765A40DF7441C002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		500ABE3E18C2C029003CE2C0 /* Finish.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Finish.png; sourceTree = "<group>"; };
+		500ABE4618C31525003CE2C0 /* WinScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = WinScene.cpp; path = ../Classes/WinScene.cpp; sourceTree = "<group>"; };
+		500ABE4718C31525003CE2C0 /* WinScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WinScene.h; path = ../Classes/WinScene.h; sourceTree = "<group>"; };
+		500ABE4918C31628003CE2C0 /* LoseScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LoseScene.cpp; path = ../Classes/LoseScene.cpp; sourceTree = "<group>"; };
+		500ABE4A18C31628003CE2C0 /* LoseScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoseScene.h; path = ../Classes/LoseScene.h; sourceTree = "<group>"; };
 		503AE0F617EB97AB00D1A890 /* Icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Icon.icns; sourceTree = "<group>"; };
 		503AE0F717EB97AB00D1A890 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		503AE0FA17EB989F00D1A890 /* AppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppController.h; path = ios/AppController.h; sourceTree = SOURCE_ROOT; };
@@ -401,6 +407,10 @@
 				50E93B7E18BD6C1800C76F75 /* PlayerObject.h */,
 				50E93B8018BECFDD00C76F75 /* EnemyObject.cpp */,
 				50E93B8118BECFDD00C76F75 /* EnemyObject.h */,
+				500ABE4618C31525003CE2C0 /* WinScene.cpp */,
+				500ABE4718C31525003CE2C0 /* WinScene.h */,
+				500ABE4918C31628003CE2C0 /* LoseScene.cpp */,
+				500ABE4A18C31628003CE2C0 /* LoseScene.h */,
 			);
 			name = Classes;
 			path = ../classes;
@@ -777,9 +787,11 @@
 				50E93B6A18B9B52B00C76F75 /* GameScene.cpp in Sources */,
 				50E93B8218BECFDD00C76F75 /* EnemyObject.cpp in Sources */,
 				50E93B7418B9BC9A00C76F75 /* IntroScene.cpp in Sources */,
+				500ABE4818C31525003CE2C0 /* WinScene.cpp in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
 				1AFAF8B716D35DE700DB1158 /* AppDelegate.cpp in Sources */,
+				500ABE4B18C31628003CE2C0 /* LoseScene.cpp in Sources */,
 				50E93B7F18BD6C1800C76F75 /* PlayerObject.cpp in Sources */,
 				50E93B6B18B9B52B00C76F75 /* MainMenuScene.cpp in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,

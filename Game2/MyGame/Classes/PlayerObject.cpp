@@ -10,7 +10,7 @@
 
 PlayerObject::PlayerObject()
 {
-    vPos = cocos2d::Point(600, 500);
+    vPos = cocos2d::Point(50, 500);
     
     PlayerSprite = cocos2d::Sprite::create("Player.png");
     PlayerSprite->setPosition(vPos);
