@@ -13,6 +13,10 @@ private:
     
     EnemyObject Enemies[10];
     
+    bool bIsOver;
+    
+    bool bIsTouching;
+    
 public:
     // there's no 'id' in cpp, so we recommend returning the class instance pointer
     static cocos2d::Scene* createScene();
@@ -28,6 +32,12 @@ public:
     
     // implement the "static create()" method manually
     CREATE_FUNC(GameScene);
+    
+    PlayerObject* GetPlayer();
+    bool GetTouching();
+    
+    void SetTouching(bool is);
+    
 };
 
 

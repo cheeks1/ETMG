@@ -1,5 +1,6 @@
 #include "GameScene.h"
 
+
 USING_NS_CC;
 
 Scene* GameScene::createScene()
@@ -27,9 +28,16 @@ bool GameScene::init()
         return false;
     }
     
+    bIsOver = false;
+    bIsTouching = false;
+    
+    this->setColor(cocos2d::Color3B(255, 255, 255));
+    
     Size visibleSize = Director::getInstance()->getVisibleSize();
     Point origin = Director::getInstance()->getVisibleOrigin();
     
+    
+    //CCTouchDispatcher::sharedDispatcher()->addTargetedDelegate(this, 0, true);
     
     /////////////////////////////
     // 2. add a menu item with "X" image, which is clicked to quit the program
@@ -65,13 +73,13 @@ bool GameScene::init()
     this->addChild(label, 1);
     
     // add "HelloWorld" splash screen"
-    auto sprite = Sprite::create("HelloWorld.png");
+    //auto sprite = Sprite::create("HelloWorld.png");
     
     // position the sprite on the center of the screen
-    sprite->setPosition(Point(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y));
+    //sprite->setPosition(Point(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y));
     
     // add the sprite as a child to this layer
-    this->addChild(sprite, 0);
+    //this->addChild(sprite, 0);
     
     //Main menu Button
     auto mainButton = MenuItemImage::create("mainMenuGameButton.png", "mainMenuGameButton.png", CC_CALLBACK_1(GameScene::MainMenuButtonCallback, this));
@@ -86,9 +94,60 @@ bool GameScene::init()
     
     this->addChild(Enemies[0].GetSprite());
     
+    auto listener1 = EventListenerTouchOneByOne::create();
+    listener1->setSwallowTouches(true);
+    
+    listener1->onTouchBegan = [](Touch* touch, Event* event){
+        // event->getCurrentTarget() returns the *listener's* sceneGraphPriority node.
+        auto target = static_cast<GameScene*>(event->getCurrentTarget());
+        
+        //Get the position of the current point relative to the button
+        Point locationInNode = target->convertToNodeSpace(touch->getLocation());
+        Size s = target->getContentSize();
+        Rect rect = Rect(0, 0, s.width, s.height);
+        
+        //Check the click area
+        if (target->GetPlayer()->GetBounds().containsPoint(locationInNode))
+        {
+            log("sprite began... x = %f, y = %f", locationInNode.x, locationInNode.y);
+            //target->GetPlayer()->SetPos(locationInNode);
+            target->SetTouching(true);
+            return true;
+        }
+        target->SetTouching(false);
+        return false;
+    };
+    
+    //Trigger when moving touch
+    listener1->onTouchMoved = [](Touch* touch, Event* event){
+        auto target = static_cast<GameScene*>(event->getCurrentTarget());
+        
+        if(target->GetTouching())
+        {
+            //Move the position of current button sprite
+            target->GetPlayer()->SetPos(target->getPosition());// + touch->getDelta());
+        }
+    };
+    
+    _eventDispatcher->addEventListenerWithSceneGraphPriority(listener1, this);
+    
     return true;
 }
 
+PlayerObject* GameScene::GetPlayer()
+{
+    return &oPlayer;
+}
+
+bool GameScene::GetTouching()
+{
+    return bIsTouching;
+}
+
+void GameScene::SetTouching(bool bIs)
+{
+    bIsTouching = bIs;
+}
 
 void GameScene::menuCloseCallback(Object* pSender)
 {
@@ -103,3 +162,4 @@ void GameScene::MainMenuButtonCallback(Object* pSender)
 {
     Director::getInstance()->popScene();
 }
+

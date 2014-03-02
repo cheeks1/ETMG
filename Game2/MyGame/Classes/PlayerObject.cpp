@@ -16,7 +16,7 @@ PlayerObject::PlayerObject()
     PlayerSprite->setPosition(vPos);
     
     
-    bounds.setRect(0.0f, 0.0f, 10.0f, 10.0f);
+    bounds.setRect(vPos.x - 16.0f, vPos.y - 16.0f, vPos.x + 16.0f, vPos.y + 16.0f);
     
     nID = 0;
 }
@@ -53,6 +53,9 @@ cocos2d::Sprite* PlayerObject::GetSprite()
 void PlayerObject::SetPos(cocos2d::Point pos)
 {
     vPos = pos;
+    PlayerSprite->setPosition(vPos);
+    
+    bounds.setRect(vPos.x - 16.0f, vPos.y - 16.0f, vPos.x + 16.0f, vPos.y + 16.0f);
 }
 
 void PlayerObject::Update()
