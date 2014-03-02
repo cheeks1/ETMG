@@ -110,7 +110,7 @@ bool GameScene::init()
         if (target->GetPlayer()->GetBounds().containsPoint(locationInNode))
         {
             log("sprite began... x = %f, y = %f", locationInNode.x, locationInNode.y);
-            //target->GetPlayer()->SetPos(locationInNode);
+            target->GetPlayer()->SetPos(locationInNode);
             target->SetTouching(true);
             return true;
         }
@@ -121,11 +121,11 @@ bool GameScene::init()
     //Trigger when moving touch
     listener1->onTouchMoved = [](Touch* touch, Event* event){
         auto target = static_cast<GameScene*>(event->getCurrentTarget());
-        
+        Point locationInNode = target->convertToNodeSpace(touch->getLocation());
         if(target->GetTouching())
         {
             //Move the position of current button sprite
-            target->GetPlayer()->SetPos(target->getPosition());// + touch->getDelta());
+            target->GetPlayer()->SetPos(locationInNode);// + touch->getDelta());
         }
     };
     
