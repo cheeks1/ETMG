@@ -2,7 +2,7 @@ Unity Project -
 http://www.youtube.com/watch?v=MJadnG6pqzU&feature=youtu.be
 
 Hardware Sensor 2: Geomagnetic field sensor - 
-http://www.youtube.com/watch?v=oqccz6-sd2k&feature=youtu.be
+http://www.youtube.com/watch?v=UneK0ellVE4&feature=youtu.be
 
 COCOS2D-X PROJECT - 
 http://www.youtube.com/watch?v=tCTB1k24qpw&feature=youtu.be
