@@ -3,19 +3,19 @@ using System.Collections;
 
 public class EnemyMove : MonoBehaviour {
 
-	private Vector3 mDir;
-	private Vector3 mAccel;
+	//private Vector3 mDir;
+	//private Vector3 mAccel;
 
 	// Use this for initialization
 	void Start () {
 	
-		mDir = Vector3.zero;
-		mAccel = Vector3.zero;
+		//mDir = Vector3.zero;
+		//mAccel = Vector3.zero;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-
+		/*
 		Vector3 dir = Vector3.zero;
 		dir.x = Input.acceleration.x;
 		dir.y = Input.acceleration.y;
@@ -34,13 +34,13 @@ public class EnemyMove : MonoBehaviour {
 			transform.Translate (dir);
 		}
 	
-		Input.ResetInputAxes();
+		Input.ResetInputAxes();*/
 
 	}
 
 	void OnGUI()
 	{
-		GUI.Box (new Rect (0, 30, 400, 30),"Accelerometer - X: " + mAccel.x + "; Y: " 
-		         + mAccel.y);
+		//GUI.Box (new Rect (0, 30, 400, 30),"Accelerometer - X: " + mAccel.x + "; Y: " 
+		//         + mAccel.y);
 	}
 }

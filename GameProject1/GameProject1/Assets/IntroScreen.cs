@@ -11,7 +11,7 @@ public class IntroScreen : MonoBehaviour {
 		style.alignment = TextAnchor.UpperCenter;
 		
 		Rect box = new Rect (40, 10, Screen.width - 40 , Screen.height - 20);
-		GUI.Box ((box), "Game Project\nBy Tim Cheek\n02\\15\\2014", style);
+		GUI.Box ((box), "UIcontollers\nBy Tim Cheek\n05\\19\\2014", style);
 		
 		style.alignment = TextAnchor.MiddleCenter;
 		style.fontSize = 100;

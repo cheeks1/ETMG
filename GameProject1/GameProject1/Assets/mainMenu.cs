@@ -11,7 +11,7 @@ public class mainMenu : MonoBehaviour {
 		style.alignment = TextAnchor.UpperCenter;
 
 		Rect box = new Rect (10, 10, Screen.width - 20 , Screen.height - 20);
-		GUI.Box ((box), "Game Project 1", style);
+		GUI.Box ((box), "UIcontollers", style);
 
 		style.alignment = TextAnchor.MiddleCenter;
 		//style.border = this.guiTexture.border;

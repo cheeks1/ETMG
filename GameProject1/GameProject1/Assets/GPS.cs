@@ -32,8 +32,8 @@ public class GPS : MonoBehaviour {
 		this.GetComponent<GUITexture> ().color = new Color (col.x, col.y, col.z, 0.3f);
 
 
-		int mag = (int)Input.compass.magneticHeading;
-		Camera.main.fieldOfView = (float)mag;
+		//int mag = (int)Input.compass.magneticHeading;
+		//Camera.main.fieldOfView = (float)mag;*/
 	}
 
 	void Stop()
@@ -44,11 +44,11 @@ public class GPS : MonoBehaviour {
 
 	void OnGUI()
 	{
-		GUI.Box (new Rect (0, 0, 400, 30),"Alt: " + fAlt + "; Long: " 
-		         + fLong + "; Lat: " + fLat);
+		//GUI.Box (new Rect (0, 0, 400, 30),"Alt: " + fAlt + "; Long: " 
+		         //+ fLong + "; Lat: " + fLat);
 
-		int mag = (int)Input.compass.magneticHeading;
-		GUI.Box (new Rect (0, 90, 400, 30),"Magnetic heading: " + mag);
+		//int mag = (int)Input.compass.magneticHeading;
+		//GUI.Box (new Rect (0, 90, 400, 30),"Magnetic heading: " + mag);
 	}
 	
 }
